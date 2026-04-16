@@ -1,0 +1,170 @@
+/* 覆蓋 Bootstrap 變數與自定義樣式 */
+:root,
+[data-bs-theme="dark"] {
+    /* 背景與基礎顏色 - 改為深色調 */
+    --bs-body-bg: #1e1e2e;
+    /* 深灰紫色背景，比純黑更柔和 */
+    --bs-body-color: #e0e0e0;
+    /* 淺灰色文字 */
+
+    /* 卡片與容器 */
+    --bs-card-bg: #2a2a3d;
+    /* 比背景稍淺的卡片顏色 */
+    --bs-card-border-color: #3f3f5a;
+    --bs-card-cap-bg: #35354b;
+
+    /* 按鈕與主色調 (馬卡龍粉藍) */
+    --bs-primary: #a2d2ff;
+    --bs-primary-rgb: 162, 210, 255;
+    --bs-primary-border-subtle: #4a4e69;
+
+    /* 狀態顏色 (維持馬卡龍色) */
+    --bs-success: #b9e4c9;
+    /* 薄荷綠 (收入) */
+    --bs-danger: #ffafcc;
+    /* 櫻花粉 (支出) */
+    --bs-info: #cdb4db;
+    /* 薰衣草紫 (進度條/分類) */
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+    color: var(--bs-body-color);
+}
+
+/* 標題樣式 */
+header h1 {
+    color: #ffafcc;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 卡片美化 */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--bs-card-border-color) !important;
+    background-color: var(--bs-card-bg);
+}
+
+.card-header {
+    font-weight: bold;
+    color: #a2d2ff;
+    border-bottom: 1px solid var(--bs-card-border-color);
+    background-color: var(--bs-card-cap-bg);
+}
+
+/* 輸入欄位樣式 - 針對深色背景優化 */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 1px solid #444466;
+    background-color: #252535 !important;
+    color: #ffffff !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(162, 210, 255, 0.2);
+}
+
+/* 讓 input placeholder 顏色淡一點 */
+::placeholder {
+    color: #8888aa !important;
+}
+
+/* 按鈕美化 */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #1e1e2e;
+    /* 按鈕文字用深色增加對比 */
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #89c2f7;
+    border-color: #89c2f7;
+    color: #1e1e2e;
+}
+
+.btn-outline-primary {
+    color: #a2d2ff;
+    border-color: #a2d2ff;
+}
+
+.btn-outline-danger {
+    color: #ffafcc;
+    border-color: #ffafcc;
+}
+
+/* 表格樣式 */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #e0e0e0;
+    --bs-table-hover-bg: rgba(255, 175, 204, 0.1);
+    --bs-table-border-color: #3f3f5a;
+}
+
+.table thead th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #a2d2ff;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* 進度條 */
+.progress {
+    height: 12px;
+    border-radius: 10px;
+    background-color: #1a1a25;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    background-color: var(--bs-info) !important;
+}
+
+/* 狀態標籤 */
+.badge.bg-success {
+    background-color: var(--bs-success) !important;
+    color: #1e1e2e !important;
+    /* 深色文字 */
+}
+
+.badge.bg-danger {
+    background-color: var(--bs-danger) !important;
+    color: #1e1e2e !important;
+    /* 深色文字 */
+}
+
+/* 統計數字 */
+#summary_income {
+    color: #b9e4c9 !important;
+}
+
+#summary_expense {
+    color: #ffafcc !important;
+}
+
+/* 滾動條美化 (針對 Webkit 瀏覽器) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f5a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a2d2ff;
+}
